@@ -6,7 +6,7 @@ services:
     github:
       branch: main
       deploy_on_push: true
-    source_dir: /
+    source_dir: .
     routes:
       - path: /
 
@@ -16,5 +16,4 @@ services:
       branch: main
       deploy_on_push: true
     source_dir: worker
-    routes:
-      - path: /worker/submit
+    routes: []  # ✅ this line is now valid
