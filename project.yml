@@ -1,0 +1,20 @@
+name: welcomesharks
+
+services:
+  - name: frontend
+    environment_slug: html
+    github:
+      branch: main
+      deploy_on_push: true
+    source_dir: /
+    routes:
+      - path: /
+
+  - name: worker
+    environment_slug: node-js
+    github:
+      branch: main
+      deploy_on_push: true
+    source_dir: worker
+    routes:
+      - path: /worker/submit
