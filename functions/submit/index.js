@@ -1,5 +1,3 @@
-// functions/submit/index.js
-
 export default async function (req, context) {
   const { name } = await req.json();
   return new Response(JSON.stringify({
