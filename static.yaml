@@ -1,4 +1,5 @@
 name: welcomesharks
+
 services:
   - name: static-site
     github:
@@ -12,6 +13,9 @@ services:
         preserve_path_prefix: false
 
   - name: submit
+    github:
+      repo: Ajaykumar250/welcomesharks
+      branch: main
     functions:
       source_dir: functions
     routes:
