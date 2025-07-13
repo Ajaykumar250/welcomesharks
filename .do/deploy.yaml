@@ -1,3 +1,5 @@
+name: welcomesharks
+
 services:
   - name: static-site
     environment_slug: html
