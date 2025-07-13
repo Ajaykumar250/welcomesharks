@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8" />
   <title>Welcome Sharks</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    #thankyou { margin-top: 20px; font-weight: bold; }
+  </style>
 </head>
 <body>
-  <h1>Hello sharks, welcome to DO!</h1>
-  <form id="contactForm">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+  <h1>Welcome Sharks</h1>
+  <form id="welcomeForm">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required />
     <button type="submit">Submit</button>
   </form>
-  <p id="response"></p>
+
+  <div id="thankyou"></div>
 
   <script>
-    const form = document.getElementById('contactForm');
-    form.addEventListener('submit', async (e) => {
+    document.getElementById('welcomeForm').addEventListener('submit', async function (e) {
       e.preventDefault();
       const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
 
-      const res = await fetch('/worker/submit', {
+      const res = await fetch('/functions/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email })
+        body: JSON.stringify({ name })
       });
 
-      const text = await res.text();
-      document.getElementById('response').innerHTML = text;
+      const data = await res.json();
+      document.getElementById('thankyou').innerText = data.message;
+      this.style.display = 'none';
     });
   </script>
 </body>
