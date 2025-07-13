@@ -1,5 +1,3 @@
-name: welcomesharks
-
 services:
   - name: static-site
     github:
