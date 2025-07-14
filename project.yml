@@ -3,9 +3,10 @@ name: welcomesharks
 services:
   - name: frontend
     environment_slug: html
-    github:
-      branch: main
     source_dir: /
+    output_dir: /
+    routes:
+      - path: /
 
 functions:
   - name: submit
