@@ -1,20 +1,6 @@
-spec:
-  name: welcomesharks
-  static_sites:
-    - name: frontend
-      github:
-        repo: Ajaykumar250/welcomesharks
-        branch: main
-      source_dir: ./
-      output_dir: ./
-      routes:
-        - path: /
-      environment_slug: html
-
-  functions:
-    - name: submit
-      github:
-        repo: Ajaykumar250/welcomesharks
-        branch: main
-      source_dir: functions/submit
-      environment_slug: node-js
+packages:
+  - name: welcomesharks
+    functions:
+      - name: submit
+        path: ./functions/submit
+        web: true
