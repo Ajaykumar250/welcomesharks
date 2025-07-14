@@ -4,15 +4,77 @@
   <meta charset="UTF-8" />
   <title>Welcome Sharks</title>
   <style>
-    body { font-family: Arial; padding: 20px; }
-    #thankyou { margin-top: 20px; font-weight: bold; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 40px;
+      background-color: #f7faff;
+      color: #007acc;
+      text-align: center;
+    }
+
+    .logo {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: inline-block;
+      text-align: left;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 15px;
+      width: 100%;
+      border: 2px solid #007acc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #005f99;
+    }
+
+    #thankyou {
+      margin-top: 25px;
+      font-weight: bold;
+      color: #0c7b26;
+    }
   </style>
 </head>
 <body>
+  <!-- 🌊 DigitalOcean Logo -->
+  <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/f/ff/DigitalOcean_logo.svg" alt="DigitalOcean Logo" />
+
   <h1>Welcome Sharks</h1>
+
   <form id="welcomeForm">
     <label for="name">Your Name:</label>
-    <input type="text" id="name" name="name" required />
+    <input type="text" id="name" name="name" placeholder="Enter your name" required />
     <button type="submit">Submit</button>
   </form>
 
@@ -23,7 +85,7 @@
       e.preventDefault();
       const name = document.getElementById('name').value;
 
-      const res = await fetch('/functions/submit', {
+      const res = await fetch('/api/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name })

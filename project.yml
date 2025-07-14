@@ -1,19 +1,12 @@
-# .do/deploy.yaml
 name: welcomesharks
-services:
-  - name: static-site
-    environment_slug: html
-    source_dir: .
-    static_sites:
-      output_dir: .
-      error_document: 404.html
-    routes:
-      - path: /
 
+services:
+  - name: frontend
+    environment_slug: html
+    github:
+      branch: main
+    source_dir: /
+
+functions:
   - name: submit
-    environment_slug: node-js
     source_dir: functions/submit
-    run_command: ""
-    build_command: ""
-    routes:
-      - path: /functions/submit
