@@ -1,7 +1,0 @@
-packages:
-  - name: cloud
-    actions:
-      - name: submit
-        limits:
-          timeout: 5000
-          memory: 256
