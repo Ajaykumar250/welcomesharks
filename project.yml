@@ -1,6 +1,7 @@
 packages:
   - name: cloud
-    actions:
+    functions:
       - name: submit
-        runtime: nodejs:18
         web: true
+        runtime: nodejs
+        source_dir: functions/cloud/submit

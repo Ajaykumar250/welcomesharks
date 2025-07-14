@@ -1,8 +1,7 @@
-export default async function (req, context) {
-  const { name } = await req.json();
-  return new Response(JSON.stringify({
-    message: `Thank you ${name} for submitting the details.`
-  }), {
-    headers: { 'Content-Type': 'application/json' }
-  });
-}
+exports.main = async (context) => {
+  const name = context.req.body.name || "Guest";
+  return {
+    statusCode: 200,
+    body: `Thanks, ${name}`
+  };
+};
