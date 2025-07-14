@@ -1,9 +1,9 @@
-services:
+components:
   - name: frontend
-    environment_slug: html
+    type: static
     source_dir: /
     output_dir: /
 
-functions:
   - name: submit
+    type: functions
     source_dir: functions/submit
