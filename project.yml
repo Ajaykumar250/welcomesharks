@@ -3,5 +3,3 @@ packages:
     functions:
       - name: submit
         web: true
-        runtime: nodejs
-        source_dir: functions/cloud/submit
