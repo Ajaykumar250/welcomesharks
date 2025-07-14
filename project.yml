@@ -1,9 +1,7 @@
-components:
-  - name: frontend
-    type: static
-    source_dir: /
-    output_dir: /
-
-  - name: submit
-    type: functions
-    source_dir: functions/submit
+packages:
+  - name: cloud
+    actions:
+      - name: submit
+        limits:
+          timeout: 5000
+          memory: 256
