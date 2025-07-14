@@ -1,6 +1,6 @@
 packages:
-  - name: welcomesharks
-    functions:
+  - name: cloud
+    actions:
       - name: submit
-        path: ./functions/submit
+        runtime: nodejs:18
         web: true
