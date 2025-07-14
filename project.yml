@@ -3,3 +3,6 @@ packages:
     functions:
       - name: submit
         web: true
+        ingress:
+          path:
+            prefix: /submit
